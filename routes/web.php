@@ -17,3 +17,6 @@ $router->get('/', ['uses' => 'MainController@home', 'as' => 'main-home']);
 //categories GET all 
 $router->get('/categories', ['uses' => 'CategoryController@list', 'as' => 'category-list']);
 
+//categories GET one 
+//{id} dénote une portion d'URL variable. On pourra le récupérer en argument de la méthode item($id)
+$router->get('/categories/{id}', ['uses' => 'CategoryController@item', 'as' => 'category-item']);
