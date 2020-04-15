@@ -11,10 +11,9 @@
 |
 */
 
-$router->get(
-    '/',
-    [
-        'uses' => 'MainController@home',
-        'as'   => 'main-home'
-    ]
-);
+//demo page d'accueil
+$router->get('/', ['uses' => 'MainController@home', 'as' => 'main-home']);
+
+//categories GET all 
+$router->get('/categories', ['uses' => 'CategoryController@list', 'as' => 'category-list']);
+
