@@ -8,35 +8,16 @@ class CategoryController extends Controller
 {
     public function item($id)
     {
-        $categoriesList = [
-            1 => [
-              'id' => 1,
-              'name' => 'Chemin vers O\'clock',
-              'status' => 1
-            ],
-            2 => [
-              'id' => 2,
-              'name' => 'Courses',
-              'status' => 1
-            ],
-            3 => [
-              'id' => 3,
-              'name' => 'O\'clock',
-              'status' => 1
-            ],
-            4 => [
-              'id' => 4,
-              'name' => 'Titre Professionnel',
-              'status' => 1
-            ]
-        ];
+        $categoryList = Category::find($id);
+
+        dd($categoryList);
 
         //si la catégorie n'existe pas...
-        if(!array_key_exists($id, $categoriesList)){
+        if(!array_key_exists($id, $categoryList)){
             abort(404, "This category does not exist dude.");
         }
 
-        $category = $categoriesList[$id];
+        $category = $categoryList[$id];
         return response()->json($category);
     }
 
