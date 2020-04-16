@@ -14,9 +14,9 @@
 //demo page d'accueil
 $router->get('/', ['uses' => 'MainController@home', 'as' => 'main-home']);
 
-//categories GET all 
+//categories GET all
 $router->get('/categories', ['uses' => 'CategoryController@list', 'as' => 'category-list']);
 
-//categories GET one 
+//categories GET one
 //{id} dénote une portion d'URL variable. On pourra le récupérer en argument de la méthode item($id)
-$router->get('/categories/{id}', ['uses' => 'CategoryController@item', 'as' => 'category-item']);
+$router->get('/categories/{id:\d+}', ['uses' => 'CategoryController@item', 'as' => 'category-item']);
